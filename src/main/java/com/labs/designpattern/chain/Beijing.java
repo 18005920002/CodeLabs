@@ -26,6 +26,7 @@ public class Beijing implements Handler{
 	
 	@Override
 	public void handleRequest(String number) {
+		System.out.println("北京节点检查:");
 		if(numberList.contains(number)){
 			System.out.println("该号码属于北京");
 			return;

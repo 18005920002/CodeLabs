@@ -26,6 +26,7 @@ public class Shanghai implements Handler{
 	
 	@Override
 	public void handleRequest(String number) {
+		System.out.println("上海节点检查:");
 		if(numberList.contains(number)){
 			System.out.println("该号码属于上海");
 			return;
