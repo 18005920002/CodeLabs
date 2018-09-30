@@ -4,7 +4,7 @@ import com.labs.basis.exception.ex.MyFileNotFoundException;
 import com.labs.basis.exception.utils.Assert;
 
 /**
- * @Description: 异常测试
+ * @Description 异常测试
  * Throwable 类
  *      + Error  代表了JVM本身的错误。错误不能被程序员通过代码处理
  *      + Exception 代表程序运行时发送的各种不期望发生的事件
@@ -19,8 +19,8 @@ import com.labs.basis.exception.utils.Assert;
  *
  *
  *
- * @Auther: win10
- * @Date: 2018/9/12 09:15
+ * @author win10
+ * @Date 2018/9/12 09:15
  */
 public class ExceptionTest {
 

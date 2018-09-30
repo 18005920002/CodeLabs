@@ -1,5 +1,6 @@
 package com.labs.callback;
 
+
 public class WangAsk implements CallBack{
 
 	//Li li;

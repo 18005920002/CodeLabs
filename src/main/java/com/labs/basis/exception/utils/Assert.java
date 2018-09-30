@@ -5,9 +5,9 @@ import com.labs.basis.exception.ex.MyFileNotFoundException;
 import java.io.*;
 
 /**
- * @Description: 异常处理
- * @Auther: win10
- * @Date: 2018/9/12 09:17
+ * @Description 异常处理
+ * @author win10
+ * @Date 2018/9/12 09:17
  */
 public class Assert {
 

@@ -5,9 +5,9 @@ import com.google.gson.GsonBuilder;
 import com.labs.json.dto.ConfirmReceiptDTO;
 
 /**
- * @Description:
- * @Auther: win10
- * @Date: 2018/9/11 11:50
+ * @Description
+ * @author win10
+ * @Date 2018/9/11 11:50
  */
 public class GsonUsage {
 

@@ -5,9 +5,9 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.labs.json.dto.ConfirmReceiptDTO;
 
 /**
- * @Description:
- * @Auther: win10
- * @Date: 2018/9/11 10:40
+ * @Description
+ * @author win10
+ * @Date 2018/9/11 10:40
  */
 public class JsonUseage {
 
