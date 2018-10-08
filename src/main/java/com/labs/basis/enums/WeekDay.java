@@ -1,4 +1,4 @@
-package com.labs.advenced.enums;
+package com.labs.basis.enums;
 
 public enum WeekDay {
 	MONDAY,
