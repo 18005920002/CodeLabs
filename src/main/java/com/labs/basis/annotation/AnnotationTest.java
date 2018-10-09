@@ -1,6 +1,5 @@
 package com.labs.basis.annotation;
 
-import com.labs.advenced.enums.WeekDay;
 
 @LabsAnnotation(clazz=String.class,value="xx",attr={1,2,3},annoAttr=@MetaAnnotation("anno")/*,day={WeekDay.SATURDAY,WeekDay.SUNDAY}*/)
 public class AnnotationTest {

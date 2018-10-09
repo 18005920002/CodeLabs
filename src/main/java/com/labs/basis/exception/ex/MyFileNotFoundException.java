@@ -1,7 +1,8 @@
 package com.labs.basis.exception.ex;
 
 /**
- * @Description
+ * Description 自定义异常
+ *
  * @author win10
  * @Date 2018/9/12 10:22
  */

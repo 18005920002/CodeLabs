@@ -1,5 +1,10 @@
 package com.labs.basis.enums;
 
+/**
+ * 枚举的定义
+ *
+ * @version 0.1
+ */
 public enum WeekDay {
 	MONDAY,
 	TUESDAY,

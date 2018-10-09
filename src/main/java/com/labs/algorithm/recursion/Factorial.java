@@ -3,7 +3,7 @@ package com.labs.algorithm.recursion;
 import java.math.BigDecimal;
 
 /**
- * @Description 阶乘 r = n * (n-1)* ... * 3 * 2 * 1
+ * Description 阶乘 r = n * (n-1)* ... * 3 * 2 * 1
  *  递归思想的应用
  *  使用递归，需要使用系统的栈来暂存方法及其参数，对问题规模不确定的情况，将导致栈溢出（StackOverflowError）
  * @author win10

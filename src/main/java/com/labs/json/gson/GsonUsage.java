@@ -5,9 +5,12 @@ import com.google.gson.GsonBuilder;
 import com.labs.json.dto.ConfirmReceiptDTO;
 
 /**
- * @Description
+ *
+ * Description
+ * Google JSON 实例
+ *
  * @author win10
- * @Date 2018/9/11 11:50
+ * @version 0.1 2018/9/11 11:50
  */
 public class GsonUsage {
 
