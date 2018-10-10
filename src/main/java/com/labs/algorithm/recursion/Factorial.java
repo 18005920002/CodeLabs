@@ -3,11 +3,13 @@ package com.labs.algorithm.recursion;
 import java.math.BigDecimal;
 
 /**
- * Description 阶乘 r = n * (n-1)* ... * 3 * 2 * 1
- *  递归思想的应用
- *  使用递归，需要使用系统的栈来暂存方法及其参数，对问题规模不确定的情况，将导致栈溢出（StackOverflowError）
+ * Title Factorial.java
+ *
+ * Description 递归思想的应用: 计算阶乘 r = n * (n-1)* ... * 3 * 2 * 1
+ * 使用递归方法实现，需要使用系统的栈来暂存方法及其参数，对问题规模不确定的情况，将导致栈溢出（StackOverflowError）
+ *
  * @author win10
- * @Date 2018/9/26 09:53
+ * @version 1.0 2018/9/26 09:53
  */
 public class Factorial {
 
