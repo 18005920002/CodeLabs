@@ -3,6 +3,10 @@ package com.labs.json.fastjson;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.labs.json.dto.ConfirmReceiptDTO;
+import com.labs.json.dto.GoodsClass;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Description
@@ -17,6 +21,20 @@ public class JsonUseage {
 
         ConfirmReceiptDTO dto = (ConfirmReceiptDTO) JSON.parseObject(str,ConfirmReceiptDTO.class);
 
-        System.out.println(JSON.toJSONString(dto,SerializerFeature.WriteMapNullValue));
+        //System.out.println(JSON.toJSONString(dto,SerializerFeature.WriteMapNullValue));
+
+
+        List<GoodsClass> list = new ArrayList<>();
+        GoodsClass goodsClass = new GoodsClass(100L,200L);
+        GoodsClass goodsClass2 = new GoodsClass(1L,2L);
+        list.add(goodsClass);
+        list.add(goodsClass2);
+        System.out.println(JSON.toJSONString(list));
+
+        GoodsClass g3 = new GoodsClass(1L,2L);
+        System.out.println("R::"+list.contains(g3));
+
+
+
     }
 }
