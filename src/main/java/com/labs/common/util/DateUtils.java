@@ -926,4 +926,27 @@ public class DateUtils {
         return ctime;
     }
 
+    /**
+     * 获取上个月的第一天
+     * @return
+     */
+    private String getFirstDayOfLastMonth(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.MONTH,-1);
+        c.set(Calendar.DATE,1);
+        return format.format(c.getTime());
+    }
+
+    /**
+     * 获取上个月的最后一天
+     * @return
+     */
+    private String getLastDayOfLastMonth(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.DATE,0);
+        return format.format(c.getTime());
+    }
+
 }

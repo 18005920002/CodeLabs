@@ -13,7 +13,7 @@ public class BigDecimalExplore {
     public static void main(String[] args) {
         /*BigDecimal init = BigDecimal.ZERO;
 
-        nit.add(new BigDecimal(3));
+        init.add(new BigDecimal(3));
         init.add(new BigDecimal(3));
         init.add(new BigDecimal(3));
         init.add(new BigDecimal(3));
@@ -41,6 +41,7 @@ public class BigDecimalExplore {
         String n5 = "2.500000000100";
         String n6 = "2.55";
         String n7 = "2.549";
+        String n8 = "888800008888000088880000888811118888000088880000888800008888.8888111122222333344440000";
 
         final int ROUND_MODE = BigDecimal.ROUND_HALF_EVEN;
         System.out.println(new BigDecimal(n1).setScale(1,ROUND_MODE));
@@ -51,5 +52,47 @@ public class BigDecimalExplore {
         System.out.println(new BigDecimal(n6).setScale(1,ROUND_MODE));
         System.out.println(new BigDecimal(n7).setScale(1,ROUND_MODE));
         System.out.println(new BigDecimal(n7).setScale(1,ROUND_MODE));
+
+
+        BigDecimal dlyQuantity = new BigDecimal(4.0);
+        BigDecimal ratio = new BigDecimal(4.0);
+        //BigDecimal dlyQuantityFinal = dlyQuantity.divide(ratio, 0, BigDecimal.ROUND_HALF_EVEN);
+        dlyQuantity.divide(ratio,0);
+        System.out.println("dlyQuantityFinal="+dlyQuantity.divide(ratio,0,BigDecimal.ROUND_DOWN));
+
+        System.out.println("======================");
+        System.out.println("toString:"+new BigDecimal(n8).toString());
+        System.out.println("toPlainString:"+new BigDecimal(n8).toPlainString());
+        System.out.println("toEngineeringString:"+new BigDecimal(n8).toEngineeringString());
+
+
+        Byte b1 = new Byte("5");
+        Byte b2 = Byte.valueOf("5");
+        if(b1.byteValue()==b2.byteValue()){
+            System.out.println("B1 == B2");
+        }else{
+            System.out.println("B1 != B2");
+        }
+
+
+        if(b1==b2.byteValue()){
+            System.out.println("B1 == B2");
+        }else{
+            System.out.println("B1 != B2");
+        }
+
+        if(b1==5){
+            System.out.println("B1 == B2");
+        }else{
+            System.out.println("B1 != B2");
+        }
+
+        if(b1.equals(b2)){
+            System.out.println("B1 == B2");
+        }else{
+            System.out.println("B1 != B2");
+        }
+
+
     }
 }
