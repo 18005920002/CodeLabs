@@ -1,6 +1,10 @@
 package com.labs.common.util;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 逻辑判断工具
@@ -28,5 +32,16 @@ public class LogicUtil {
         System.out.println(mutexTrue(true,false));
         System.out.println(mutexTrue(false,true));
         System.out.println(mutexTrue(false,false));
+        getJoinString();
     }
+
+    public static void getJoinString(){
+        List<Byte> ls = new ArrayList<>();
+        ls.add(new Byte("1"));
+        ls.add(new Byte("2"));
+        ls.add(new Byte("3"));
+        ls.add(new Byte("4"));
+        System.out.println(StringUtils.join(ls,","));
+    }
+
 }

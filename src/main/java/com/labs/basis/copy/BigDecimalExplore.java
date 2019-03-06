@@ -41,6 +41,7 @@ public class BigDecimalExplore {
         String n5 = "2.500000000100";
         String n6 = "2.55";
         String n7 = "2.549";
+        String n9= "16.666";
         String n8 = "888800008888000088880000888811118888000088880000888800008888.8888111122222333344440000";
 
         final int ROUND_MODE = BigDecimal.ROUND_HALF_EVEN;
@@ -52,6 +53,8 @@ public class BigDecimalExplore {
         System.out.println(new BigDecimal(n6).setScale(1,ROUND_MODE));
         System.out.println(new BigDecimal(n7).setScale(1,ROUND_MODE));
         System.out.println(new BigDecimal(n7).setScale(1,ROUND_MODE));
+        System.out.println("=========");
+        System.out.println(new BigDecimal(n9).setScale(1,ROUND_MODE));
 
 
         BigDecimal dlyQuantity = new BigDecimal(4.0);
