@@ -4,7 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * 日历工具
+ * 日历工具类，包含的功能列表如下：
+ * * 当前年月【yyyyMM】
+ * * 上个月【yyyyMM】
+ * * 下个月【yyyyMM】
+ * * 指定年月的上个月【yyyyMM】
+ * * 指定年月的下个月【yyyyMM】
+ * * 某月第一天【yyyy-MM-dd】
+ * * 某月最后一天【yyyy-MM-dd】
  *
  * @author win10
  * @version v1.0 2019/1/11 11:14
