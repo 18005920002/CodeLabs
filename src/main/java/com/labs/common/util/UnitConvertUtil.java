@@ -1,6 +1,7 @@
 package com.labs.common.util;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * 货物计量单位按比例转换
@@ -11,6 +12,8 @@ import java.math.BigDecimal;
 public class UnitConvertUtil {
 
     public static void main(String[] args) {
+
+        System.out.println(DateUtils.formatDate(new Date(),"yyyyMMddHHmmss"));
         UnitConvertUtil ucu = new UnitConvertUtil();
         ucu.getText();
         System.out.println(">>>>>>>>>>");
@@ -20,7 +23,7 @@ public class UnitConvertUtil {
 
 
     private String getText(){
-        BigDecimal total = new BigDecimal("123");
+        BigDecimal total = new BigDecimal("12345");
 
         BigDecimal ru = new BigDecimal("1");
         BigDecimal rb = new BigDecimal("10");

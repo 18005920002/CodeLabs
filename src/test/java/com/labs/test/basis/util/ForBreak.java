@@ -12,7 +12,7 @@ public class ForBreak {
             System.out.println("i=="+i);
             for(int j=0;j<100;j++){
                 System.out.println("j=="+j);
-                if(j==20){
+                if(j==5){
                     break;
                 }
                 System.out.println("to next j");

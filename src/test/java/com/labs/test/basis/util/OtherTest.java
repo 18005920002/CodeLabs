@@ -8,7 +8,12 @@ package com.labs.test.basis.util;
  */
 public class OtherTest {
     public static void main(String[] args) {
-        System.out.println(genCode("CI0008","201801"));
+        Integer lastDlyDaysNum = null;
+        Integer dlyDaysNum = 10;
+
+        System.out.println(dlyDaysNum.compareTo(lastDlyDaysNum));
+
+        //System.out.println(genCode("CI0008","201801"));
     }
 
     static String genCode(String cityCode,String yearMonth){

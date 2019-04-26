@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="db.enroll.sys.DictionaryMapper">
+    <select id="listColumns" parameterType="java.lang.String" resultType="com.labs.dictionary.vo.ColumnVO">
+        SELECT
+        `TABLE_NAME` AS tableName,
+        `COLUMN_NAME` AS columnName,
+        `COLUMN_COMMENT` AS columnComment,
+        `DATA_TYPE` AS dataType,
+        `COLUMN_TYPE` AS columnType,
+        `IS_NULLABLE` AS isNullable
+        FROM
+            information_schema.COLUMNS
+        WHERE 1=1 and  table_schema = 'lucky_stock' AND table_name = 't_shop_info'
+    </select>
+</mapper>
