@@ -1,0 +1,123 @@
+package ${meta.packageName};
+
+
+import com.lucky.stock.api.dto.check.shop.${meta.upperCamelEntity}DTO;
+import com.lucky.stock.check.shop.service.${meta.upperCamelEntity}Service;
+import com.lucky.stock.common.model.check.shop.${meta.upperCamelEntity};
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+/**
+ * ${meta.entityCommnet}控制器
+ *
+ * @author ${meta.author}
+ * @version v1.0 ${meta.createTime}
+ */
+@Controller
+@RequestMapping("/check/shop/task")
+public class ${meta.upperCamelEntity}Controller {
+
+    public static final String BASE = "/check/shop/task";
+    public static final String TASK_LIST= BASE + "/list";
+    public static final String CREATE_DETAIL= BASE + "/detail";
+    public static final String MODIFY_DETAIL= BASE + "/modify";
+    public static final String VIEW_DETAIL= BASE + "/view";
+
+    private Logger logger = LoggerFactory.getLogger(${meta.upperCamelEntity}Controller.class);
+
+    @Autowired
+    ${meta.upperCamelEntity}Service ${meta.lowerCamelEntity}Service;
+
+
+    @RequestMapping(value = "/to${meta.upperCamelEntity}List.do_")
+    public String toTaskList(){
+        logger.info("进入列表");
+        return TASK_LIST;
+    }
+
+    @RequestMapping(value = "/toCreate${meta.upperCamelEntity}")
+    public String toCreateTask(){
+        logger.info("进入新建页面");
+        return CREATE_DETAIL;
+    }
+
+    @RequestMapping(value = "/toModify${meta.upperCamelEntity}")
+    public String toModifyTask(String taskId,Integer view){
+        logger.info("进入修改/查看页面");
+        if(CommonEnum.LogicEnum.YES.getIndex()==view.intValue()){
+            return VIEW_DETAIL;
+        }else{
+            return MODIFY_DETAIL;
+        }
+    }
+
+    /**
+     * 分页查询${meta.upperCamelEntity}列表
+     * @return
+     */
+    @RequestMapping(value = "/list${meta.upperCamelEntity}",method = RequestMethod.GET)
+    @ResponseBody
+    public ResultInfo list${meta.upperCamelEntity}(){
+        ${meta.upperCamelEntity} param =  new ${meta.upperCamelEntity}();
+        return ResultInfo.success(${meta.lowerCamelEntity}Service.list${meta.upperCamelEntity}(param));
+    }
+
+    /**
+     * 保存${meta.upperCamelEntity}
+     * @return
+     */
+    @RequestMapping(value = "/save${meta.upperCamelEntity}",method = RequestMethod.POST)
+    @ResponseBody
+    public ResultInfo save${meta.upperCamelEntity}(String formData){
+        ${meta.upperCamelEntity}Vo vo = JSON.parseObject(formData,${meta.upperCamelEntity}Vo.class);
+        ${meta.upperCamelEntity}DTO dto = new ${meta.upperCamelEntity}DTO();
+        ModelConvert.taskVo2DTO(vo,dto);
+        EmployeeDTO emp = RequestContextForLucky.getEmployee();
+        dto.setCreateBy(Long.valueOf(emp.getId()));
+        dto.setCreatorName(emp.getName());
+        dto.setOperatorDeptId(Long.valueOf(emp.getDeptId()));
+        dto.setOperatorDeptName(emp.getDeptName());
+        try{
+            return ResultInfo.success(${meta.lowerCamelEntity}Service.save${meta.upperCamelEntity}(dto));
+        }catch (Exception e){
+            return ResultInfo.errorMessage(e.getMessage());
+        }
+    }
+
+    /**
+     * 修改${meta.upperCamelEntity}
+     * @return
+     */
+    @RequestMapping(value = "/modify${meta.upperCamelEntity}",method = RequestMethod.POST)
+    @ResponseBody
+    public ResultInfo modify${meta.upperCamelEntity}(${meta.upperCamelEntity}Vo formData){
+        ${meta.upperCamelEntity}DTO dto = new ${meta.upperCamelEntity}DTO();
+        ModelConvert.taskVo2DTO(formData,dto);
+        EmployeeDTO emp = RequestContextForLucky.getEmployee();
+        dto.setLastModifyBy(Long.valueOf(emp.getId()));
+        dto.setLastModifierName(emp.getName());
+        dto.setOperatorDeptId(Long.valueOf(emp.getDeptId()));
+        dto.setOperatorDeptName(emp.getDeptName());
+        return ResultInfo.success(${meta.lowerCamelEntity}Service.modify${meta.upperCamelEntity}(dto));
+    }
+
+    /**
+     * 修改${meta.upperCamelEntity}
+     * @return
+     */
+    @RequestMapping(value = "/get${meta.upperCamelEntity}",method = RequestMethod.POST)
+    @ResponseBody
+    public ResultInfo get${meta.upperCamelEntity}(Long taskId){
+        ${meta.upperCamelEntity} task = ${meta.lowerCamelEntity}Service.get${meta.upperCamelEntity}ById(taskId);
+        EmployeeDTO emp = RequestContextForLucky.getEmployee();
+        ${meta.upperCamelEntity}Vo vo = new ${meta.upperCamelEntity}Vo();
+        ModelConvert.entity2VO(task,vo);
+        return ResultInfo.success(vo);
+    }
+
+
+}

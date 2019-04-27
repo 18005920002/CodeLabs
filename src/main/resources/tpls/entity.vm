@@ -1,0 +1,17 @@
+package ${meta.packageName};
+
+import lombok.Getter;
+import lombok.Setter;
+
+
+/**
+ * ${meta.entityCommnet}实体类
+ *
+ * @author ${meta.author}
+ * @version v1.0 ${meta.createTime}
+ */
+@Getter
+@Setter
+public class ${meta.upperCamelEntity}{
+	${entityCodeText}
+}

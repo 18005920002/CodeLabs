@@ -1,6 +1,5 @@
 package com.labs.dictionary.dao;
 
-import com.labs.db.po.SysUser;
 import com.labs.db.util.MybatisUtil;
 import com.labs.dictionary.vo.ColumnVO;
 import org.apache.ibatis.session.SqlSession;
@@ -20,8 +19,8 @@ public class DictionaryDao {
     //    return this.queryForList(sqlXml+"getColumns",tableName);
     //}
 
-    public List<ColumnVO> getColumns(String tttt){
-        List<ColumnVO> columnVO =  session.selectList("db.enroll.sys.DictionaryMapper.listColumns", tttt);
+    public List<ColumnVO> getColumns(String tableName){
+        List<ColumnVO> columnVO =  session.selectList("db.enroll.sys.DictionaryMapper.listColumns", tableName);
         return columnVO;
     }
 

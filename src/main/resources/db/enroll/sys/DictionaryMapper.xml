@@ -13,6 +13,6 @@
         `IS_NULLABLE` AS isNullable
         FROM
             information_schema.COLUMNS
-        WHERE 1=1 and  table_schema = 'lucky_stock' AND table_name = 't_shop_info'
+        WHERE 1=1 and  table_schema = 'lucky_stock' AND table_name = #{tableName}
     </select>
 </mapper>

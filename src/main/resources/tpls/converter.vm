@@ -1,0 +1,13 @@
+package ${meta.packageName};
+
+/**
+ * ${meta.entityCommnet}实体转换类
+ *
+ * @author ${meta.author}
+ * @version v1.0 ${meta.createTime}
+ */
+@Getter
+@Setter
+public class ${meta.upperCamelEntity}Converter{
+	${convertText}
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="${namespace}">
+<select id="get${meta.upperCamelEntity}ById" parameterClass="long" resultClass="${meta.lowerCamelEntity}">
+  ${selectOneText}	
+</select>
+
+<select id="get${meta.upperCamelEntity}ById" parameterClass="long" resultClass="${meta.lowerCamelEntity}">
+  ${selectText}
+</select>
+
+<insert id="insert{meta.upperCamelEntity}" parameterClass="{meta.lowerCamelEntity}">
+  ${insertText}
+</insert>
+
+<update id="update{meta.upperCamelEntity}" parameterClass="{meta.lowerCamelEntity}">
+  ${updateText}
+</update>
+
+<delete id="delete{meta.upperCamelEntity}ById" parameterClass="long">
+  ${deleteOneText}
+</delete>
+</sqlMap>
