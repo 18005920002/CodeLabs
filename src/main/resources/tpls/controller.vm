@@ -33,19 +33,19 @@ public class ${meta.upperCamelEntity}Controller {
     ${meta.upperCamelEntity}Service ${meta.lowerCamelEntity}Service;
 
 
-    @RequestMapping(value = "/to${meta.upperCamelEntity}List.do_")
+    @RequestMapping(value = "/toList")
     public String toTaskList(){
         logger.info("进入列表");
         return TASK_LIST;
     }
 
-    @RequestMapping(value = "/toCreate${meta.upperCamelEntity}")
+    @RequestMapping(value = "/toCreate")
     public String toCreateTask(){
         logger.info("进入新建页面");
         return CREATE_DETAIL;
     }
 
-    @RequestMapping(value = "/toModify${meta.upperCamelEntity}")
+    @RequestMapping(value = "/toModify")
     public String toModifyTask(String taskId,Integer view){
         logger.info("进入修改/查看页面");
         if(CommonEnum.LogicEnum.YES.getIndex()==view.intValue()){
@@ -59,7 +59,7 @@ public class ${meta.upperCamelEntity}Controller {
      * 分页查询${meta.upperCamelEntity}列表
      * @return
      */
-    @RequestMapping(value = "/list${meta.upperCamelEntity}",method = RequestMethod.GET)
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
     @ResponseBody
     public ResultInfo list${meta.upperCamelEntity}(){
         ${meta.upperCamelEntity} param =  new ${meta.upperCamelEntity}();
@@ -70,7 +70,7 @@ public class ${meta.upperCamelEntity}Controller {
      * 保存${meta.upperCamelEntity}
      * @return
      */
-    @RequestMapping(value = "/save${meta.upperCamelEntity}",method = RequestMethod.POST)
+    @RequestMapping(value = "/save",method = RequestMethod.POST)
     @ResponseBody
     public ResultInfo save${meta.upperCamelEntity}(String formData){
         ${meta.upperCamelEntity}Vo vo = JSON.parseObject(formData,${meta.upperCamelEntity}Vo.class);
@@ -92,7 +92,7 @@ public class ${meta.upperCamelEntity}Controller {
      * 修改${meta.upperCamelEntity}
      * @return
      */
-    @RequestMapping(value = "/modify${meta.upperCamelEntity}",method = RequestMethod.POST)
+    @RequestMapping(value = "/modify",method = RequestMethod.POST)
     @ResponseBody
     public ResultInfo modify${meta.upperCamelEntity}(${meta.upperCamelEntity}Vo formData){
         ${meta.upperCamelEntity}DTO dto = new ${meta.upperCamelEntity}DTO();

@@ -334,10 +334,10 @@ public class CodeGenerator {
         final String CONVERTER_TEMPLATE_NAME="tpls/converter.vm";
 
 
-        final String TABLE_NAME = "t_stock_check_shop_task";
-        final String ENTITY_NAME = "ShopCheckTask";
-        final String ENTITY_COMMENT = "门店盘点任务";
-        final String PACKAGE_NAME = "com.labs.xxx";
+        final String TABLE_NAME = "t_shop_assets_order_item";
+        final String ENTITY_NAME = "ShopAssetsOrderItem";
+        final String ENTITY_COMMENT = "门店资产申请单明细";
+        final String PACKAGE_NAME = "com.lucky.stock.order.assets";
 
         CodeGenerator eng = new CodeGenerator(v);
         //生成Dao模板
