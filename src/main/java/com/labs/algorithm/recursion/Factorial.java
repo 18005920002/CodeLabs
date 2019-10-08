@@ -20,9 +20,11 @@ public class Factorial {
      */
     public static BigDecimal factorial(int n){
         if(n == 1){
-            return BigDecimal.ONE;  //递归结束条件
+            //递归结束条件
+            return BigDecimal.ONE;
         }
-        return BigDecimal.valueOf(n).multiply(factorial(n-1));//提取重复的逻辑，缩小问题规模
+        //提取重复的逻辑，缩小问题规模
+        return BigDecimal.valueOf(n).multiply(factorial(n-1));
     }
 
     /**
