@@ -58,10 +58,31 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
         put(root,key,value);
     }
 
-    public void put(Node node,Key key,Value value){
-        
+    public Node put(Node node,Key key,Value value){
+
+        if(null==node){
+            return new Node(key,value,1);
+        }
+
+        int cmp = key.compareTo(node.key);
+
+        if(cmp < 0){
+            node.left = put(node.left,key,value);
+        } else if (cmp > 0){
+            node.right = put(node.right,key,value);
+        } else{
+            node.value = value;
+        }
+
+        node.n = size(node.left) + size(node.right) + 1;
+        return  node;
     }
 
 
+    public static void main(String[] args){
+        BinarySearchTree<String,String> tree = new BinarySearchTree<>();
+        tree.put("A","A");
+        System.out.println(tree);
+    }
 
 }
