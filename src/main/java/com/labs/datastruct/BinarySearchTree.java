@@ -1,20 +1,35 @@
 package com.labs.datastruct;
 
+import java.io.Serializable;
 
 /**
- * @Description: 二叉树
+ * @Description: 二叉树-递归实现
  * @Author: tanyun.zheng
  * @Date: 2019/10/7 16:20
  */
-public class BinarySearchTree<Key extends Comparable<Key>,Value> {
+public class BinarySearchTree<Key extends Comparable<Key>,Value> implements Serializable {
 
+    /**
+     * 根节点
+     */
     private Node root;
 
     private class Node{
         private Key key;
         private Value value;
+
+        /**
+         * 左节点
+         */
         private Node left;
+        /**
+         * 右节点
+         */
         private Node right;
+
+        /**
+         * 节点数
+         */
         private int n;
 
         public Node(Key key,Value value,int n){
@@ -55,7 +70,7 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
     }
 
     public void put(Key key,Value value){
-        put(root,key,value);
+        root = put(root,key,value);
     }
 
     public Node put(Node node,Key key,Value value){
@@ -78,11 +93,18 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> {
         return  node;
     }
 
-
     public static void main(String[] args){
         BinarySearchTree<String,String> tree = new BinarySearchTree<>();
-        tree.put("A","A");
-        System.out.println(tree);
+        tree.put("X","X1");
+        tree.put("G","G1");
+        tree.put("M","M1");
+        tree.put("P","P1");
+        tree.put("E","E1");
+        tree.put("F","F1");
+        tree.put("T","T1");
+        tree.put("U","U1");
+        tree.put("H","H1");
+        System.out.println(tree.size(tree.root.left.right));
     }
 
 }
