@@ -9,8 +9,8 @@ package com.labs.common.util;
 public class EnumUtil {
     public static void main(String[] args) {
         DeliveryStatusEnum[] s = DeliveryStatusEnum.values();
-        for(DeliveryStatusEnum e:DeliveryStatusEnum.values()){
-            System.out.println(e.getVal()+e.getLabel()+e.name());
+        for (DeliveryStatusEnum e : DeliveryStatusEnum.values()) {
+            System.out.println(e.getVal() + e.getLabel() + e.name());
         }
 
     }

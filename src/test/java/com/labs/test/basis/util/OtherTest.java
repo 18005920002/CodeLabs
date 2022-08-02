@@ -39,11 +39,10 @@ public class OtherTest {
         System.out.println(i);
     }
 
-    static String genCode(String cityCode,String yearMonth){
-        String s ="TBQ"+cityCode.substring(2,6)+yearMonth.substring(2,6);
+    static String genCode(String cityCode, String yearMonth) {
+        String s = "TBQ" + cityCode.substring(2, 6) + yearMonth.substring(2, 6);
         return s;
     }
-
 
 
 }

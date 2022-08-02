@@ -13,16 +13,16 @@ import java.util.Arrays;
  */
 public class BinarySearch {
 
-    public static int rank(int key,int[] a){
+    public static int rank(int key, int[] a) {
         int low = 0;
-        int height = a.length-1;
-        while (low<=height){
-            int mid = low + (height-low) /2;
-            if(key < a[mid]){
+        int height = a.length - 1;
+        while (low <= height) {
+            int mid = low + (height - low) / 2;
+            if (key < a[mid]) {
                 height = mid - 1;
-            }else if(key > a[mid]){
+            } else if (key > a[mid]) {
                 low = mid + 1;
-            }else{
+            } else {
                 return mid;
             }
         }
@@ -36,15 +36,15 @@ public class BinarySearch {
          *  - 找到返回索引
          *  - 找不到返回-1
          */
-        int[] whiteList = {11,99,32,57,46,83,27,15,78,30};
+        int[] whiteList = {11, 99, 32, 57, 46, 83, 27, 15, 78, 30};
         Arrays.sort(whiteList);
-        while (!StdIn.isEmpty()){
+        while (!StdIn.isEmpty()) {
             int key = StdIn.readInt();
-            int index = rank(key,whiteList);
-            if(index == -1){
+            int index = rank(key, whiteList);
+            if (index == -1) {
                 StdOut.println(key);
-            }else{
-                StdOut.println("Found @ " + key);
+            } else {
+                StdOut.println("Found @ " + index);
             }
         }
     }

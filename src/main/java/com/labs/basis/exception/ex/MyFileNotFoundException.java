@@ -10,15 +10,15 @@ public class MyFileNotFoundException extends Exception {
 
     private String msg;
 
-    public MyFileNotFoundException(){
+    public MyFileNotFoundException() {
         super();
     }
 
-    public MyFileNotFoundException(String msg){
+    public MyFileNotFoundException(String msg) {
         this.msg = msg;
     }
 
-    public String getMessage(){
+    public String getMessage() {
         return "::::::" + msg;
     }
 }

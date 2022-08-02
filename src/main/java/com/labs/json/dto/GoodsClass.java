@@ -34,9 +34,10 @@ public class GoodsClass {
      */
     private String smallClassName;
 
-    public GoodsClass(){}
+    public GoodsClass() {
+    }
 
-    public GoodsClass(Long largeClassId, Long smallClassId){
+    public GoodsClass(Long largeClassId, Long smallClassId) {
         this.largeClassId = largeClassId;
         this.smallClassId = smallClassId;
     }
@@ -95,7 +96,7 @@ public class GoodsClass {
         if (o == null || getClass() != o.getClass()) return false;
         GoodsClass that = (GoodsClass) o;
         return Objects.equals(largeClassId, that.largeClassId) &&
-                Objects.equals(smallClassId, that.smallClassId) ;
+                Objects.equals(smallClassId, that.smallClassId);
     }
 
     @Override

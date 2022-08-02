@@ -4,14 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class AdvancedMemberStrategy implements MemberStrategy{
+public class AdvancedMemberStrategy implements MemberStrategy {
 
-	private Logger logger = LoggerFactory.getLogger(AdvancedMemberStrategy.class);
+    private Logger logger = LoggerFactory.getLogger(AdvancedMemberStrategy.class);
 
-	@Override
-	public double calcPrice(double bookPrice) {
-		logger.info("对于高级会员的折扣为20%");
+    @Override
+    public double calcPrice(double bookPrice) {
+        logger.info("对于高级会员的折扣为20%");
         return bookPrice * 0.8;
-	}
+    }
 
 }

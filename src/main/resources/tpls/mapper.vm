@@ -3,23 +3,23 @@
         PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
         "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="${namespace}">
-<select id="getById" parameterClass="long" resultClass="${meta.lowerCamelEntity}">
-  ${selectOneText}	
-</select>
+    <select id="getById" parameterClass="long" resultClass="${meta.lowerCamelEntity}">
+        ${selectOneText}
+    </select>
 
-<select id="getByParam" parameterClass="long" resultClass="${meta.lowerCamelEntity}">
-  ${selectText}
-</select>
+    <select id="getByParam" parameterClass="long" resultClass="${meta.lowerCamelEntity}">
+        ${selectText}
+    </select>
 
-<insert id="insert" parameterClass="{meta.lowerCamelEntity}">
-  ${insertText}
-</insert>
+    <insert id="insert" parameterClass="{meta.lowerCamelEntity}">
+        ${insertText}
+    </insert>
 
-<update id="update" parameterClass="{meta.lowerCamelEntity}">
-  ${updateText}
-</update>
+    <update id="update" parameterClass="{meta.lowerCamelEntity}">
+        ${updateText}
+    </update>
 
-<delete id="deleteById" parameterClass="long">
-  ${deleteOneText}
-</delete>
+    <delete id="deleteById" parameterClass="long">
+        ${deleteOneText}
+    </delete>
 </sqlMap>

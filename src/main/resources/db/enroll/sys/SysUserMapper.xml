@@ -4,6 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="db.enroll.sys.SysUserMapper">
     <select id="selectSysUser" resultType="com.labs.db.po.SysUser">
-    select * from Sys_User where id = #{id}
-  </select>
+        select * from Sys_User where id = #{id}
+    </select>
 </mapper>

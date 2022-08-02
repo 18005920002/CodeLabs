@@ -9,60 +9,63 @@ import com.lucky.stock.common.model.check.shop.${meta.upperCamelEntity};
 import java.util.List;
 
 /**
- * ${meta.entityCommnet}服务接口
- *
- * @author ${meta.author}
- * @version v1.0 ${meta.createTime}
- */
+* ${meta.entityCommnet}服务接口
+*
+* @author ${meta.author}
+* @version v1.0 ${meta.createTime}
+*/
 public interface ${meta.upperCamelEntity}Service {
-    /**
-     * 查询${meta.entityCommnet}
-     * @param id
-     * @return
-     */
-    ${meta.upperCamelEntity} get${meta.upperCamelEntity}ById(Long id);
+/**
+* 查询${meta.entityCommnet}
+* @param id
+* @return
+*/
+${meta.upperCamelEntity} get${meta.upperCamelEntity}ById(Long id);
+
+/**
+* 分页查询${meta.entityCommnet}(WEB)
+* @param param
+* @return
+*/
+PaginationResult
+<${meta.upperCamelEntity}Vo> list${meta.upperCamelEntity}ByPage(${meta.upperCamelEntity}Param param);
+
 
     /**
-     * 分页查询${meta.entityCommnet}(WEB)
-     * @param param
-     * @return
-     */
-    PaginationResult<${meta.upperCamelEntity}Vo> list${meta.upperCamelEntity}ByPage(${meta.upperCamelEntity}Param param);
-
-
-    /**
-     * 查询${meta.entityCommnet}列表
-     * @param ${meta.lowerCamelEntity}
-     * @return
-     */
+    * 查询${meta.entityCommnet}列表
+    * @param ${meta.lowerCamelEntity}
+    * @return
+    */
     List<${meta.upperCamelEntity}> list${meta.upperCamelEntity}(${meta.upperCamelEntity} ${meta.lowerCamelEntity});
 
 
     /**
-     * 插入${meta.entityCommnet}
-     * @param ${meta.lowerCamelEntity}
-     * @return
-     */
+    * 插入${meta.entityCommnet}
+    * @param ${meta.lowerCamelEntity}
+    * @return
+    */
     Long insert${meta.upperCamelEntity}(${meta.upperCamelEntity} ${meta.lowerCamelEntity});
 
     /**
-     * 更新${meta.entityCommnet}
-     * @param ${meta.lowerCamelEntity}
-     * @return
-     */
+    * 更新${meta.entityCommnet}
+    * @param ${meta.lowerCamelEntity}
+    * @return
+    */
     int update${meta.upperCamelEntity}(${meta.upperCamelEntity} ${meta.lowerCamelEntity});
 
     /**
-     * 保存门店盘点任务
-     * @param dto
-     * @return
-     */
-    Result<Boolean> save${meta.upperCamelEntity}(${meta.upperCamelEntity}DTO dto);
-    /**
-     * 修改${meta.entityCommnet}
-     * @param dto
-     * @return
-     */
-    Result<Boolean> modify${meta.upperCamelEntity}(${meta.upperCamelEntity}DTO dto);
+    * 保存门店盘点任务
+    * @param dto
+    * @return
+    */
+    Result
+    <Boolean> save${meta.upperCamelEntity}(${meta.upperCamelEntity}DTO dto);
+        /**
+        * 修改${meta.entityCommnet}
+        * @param dto
+        * @return
+        */
+        Result
+        <Boolean> modify${meta.upperCamelEntity}(${meta.upperCamelEntity}DTO dto);
 
-}
+            }

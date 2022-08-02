@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ConcurrentDAO">
+
+    <update id="updateStock" parameterClass="com.lucky.stock.api.bo.shopstock.ShopGoodsStockBO">
+        update t_shop_goods_stock_detail
+        set total_count=total_count+#totalCount#,
+        saleable_count=saleable_count+#saleableCount#
+        where
+        goods_id=#goodsId#
+        and shop_id=#shopDeptId#
+    </update>
+
+    <select id="getStock" parameterClass="com.lucky.stock.api.bo.shopstock.ShopGoodsStockBO"
+            resultClass="com.lucky.stock.api.bo.shopstock.ShopGoodsStockBO">
+        select
+        total_count totalCount,
+        saleable_count saleableCount,
+        goods_id as goodsId,
+        shop_id as shopDeptId
+        from t_shop_goods_stock_detail
+        where goods_id=#goodsId#
+        and shop_id=#shopDeptId#
+    </select>
+
+</sqlMap>

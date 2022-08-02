@@ -22,13 +22,12 @@ import java.util.Set;
  */
 public class SyncPullConsumer {
 
-    private static Map<MessageQueue,Long> offsetTable = new HashMap<MessageQueue,Long>();
+    private static Map<MessageQueue, Long> offsetTable = new HashMap<MessageQueue, Long>();
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
 
         final String groupName = "RMQ-G-01";
         final String topic = "Topic-01";
-
 
 
         DefaultMQPullConsumer consumer = new DefaultMQPullConsumer(groupName);
@@ -37,23 +36,23 @@ public class SyncPullConsumer {
         System.out.printf("Consumer Started.%n");
 
         Set<MessageQueue> mqs = consumer.fetchSubscribeMessageQueues(topic);
-        for(MessageQueue mq:mqs){
-            System.out.printf("Consume from the queue:%s%n",mq);
+        for (MessageQueue mq : mqs) {
+            System.out.printf("Consume from the queue:%s%n", mq);
             SINGLE_MQ:
-            while (true){
-                PullResult pullResult = consumer.pullBlockIfNotFound(mq,null,getMessageQueueOffset(mq),32);
-                System.out.printf("%s,%n",pullResult);
+            while (true) {
+                PullResult pullResult = consumer.pullBlockIfNotFound(mq, null, getMessageQueueOffset(mq), 32);
+                System.out.printf("%s,%n", pullResult);
 
-                putMessageQueueOffset(mq,pullResult.getNextBeginOffset());
-                switch ((pullResult.getPullStatus())){
+                putMessageQueueOffset(mq, pullResult.getNextBeginOffset());
+                switch ((pullResult.getPullStatus())) {
                     case FOUND:
                         break;
                     case NO_MATCHED_MSG:
                         break;
                     case NO_NEW_MSG:
-                        break  SINGLE_MQ;
+                        break SINGLE_MQ;
                     case OFFSET_ILLEGAL:
-                        break ;
+                        break;
                 }
             }
         }

@@ -19,10 +19,11 @@ public class Customer {
 
     private Stock stock;
 
-    public Customer(){}
+    public Customer() {
+    }
 
-    public Customer(Integer id){
+    public Customer(Integer id) {
         this.id = id;
-        this.name = "User-"+id;
+        this.name = "User-" + id;
     }
 }

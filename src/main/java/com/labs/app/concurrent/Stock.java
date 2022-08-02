@@ -1,5 +1,8 @@
 package com.labs.app.concurrent;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @Description: 库存信息
  * @Author: tanyun.zheng
@@ -7,9 +10,10 @@ package com.labs.app.concurrent;
  */
 public class Stock {
 
-    public Stock(){}
+    public Stock() {
+    }
 
-    public Stock(Integer stock){
+    public Stock(Integer stock) {
         this.stock = stock;
     }
 
@@ -23,22 +27,29 @@ public class Stock {
         this.stock = stock;
     }
 
-    public  Boolean subStock(Integer userId){
-        if(stock==0){
-            System.out.println("已售罄");
-            return Boolean.FALSE;
-        }
-        --stock ;
-        Double price=29.9;
+    public Boolean subStock(Integer userId, Lock lock) {
 
-        if(stock>50){
-            price =19.9;
+        try {
+            lock.lock();
+            if (stock == 0) {
+                System.out.println("已售罄");
+                return Boolean.FALSE;
+            }
+            --stock;
+            Double price = 29.9;
+
+            if (stock > 50) {
+                price = 19.9;
+            }
+
+            if (stock > 80) {
+                price = 9.9;
+            }
+            System.out.println("User-" + userId + " buy @ price: " + price);
+        } finally {
+            lock.unlock();
         }
 
-        if(stock>80){
-            price=9.9;
-        }
-        System.out.println("User-"+ userId +" buy @ price: "+price);
         return Boolean.TRUE;
     }
 

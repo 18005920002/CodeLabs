@@ -24,8 +24,9 @@ public class PlayMusic {
         try {
             File file = new File(filename);
             if (file.canRead()) url = file.toURI().toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-        catch (MalformedURLException e) { e.printStackTrace(); }
         // URL url = StdAudio.class.getResource(filename);
         if (url == null) throw new RuntimeException("audio " + filename + " not found");
         AudioClip clip = Applet.newAudioClip(url);
@@ -90,17 +91,13 @@ public class PlayMusic {
             while ((count = ais.read(samples, 0, BUFFER_SIZE)) != -1) {
                 line.write(samples, 0, count);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        catch (UnsupportedAudioFileException e) {
+        } catch (UnsupportedAudioFileException e) {
             e.printStackTrace();
-        }
-        catch (LineUnavailableException e) {
+        } catch (LineUnavailableException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             if (line != null) {
                 line.drain();
                 line.close();

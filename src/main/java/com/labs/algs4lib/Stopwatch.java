@@ -12,18 +12,18 @@ package com.labs.algs4lib; /****************************************************
  ******************************************************************************/
 
 /**
- *  The {@code Stopwatch} data type is for measuring
- *  the time that elapses between the start and end of a
- *  programming task (wall-clock time).
+ * The {@code Stopwatch} data type is for measuring
+ * the time that elapses between the start and end of a
+ * programming task (wall-clock time).
+ * <p>
+ * See {@link StopwatchCPU} for a version that measures CPU time.
  *
- *  See {@link StopwatchCPU} for a version that measures CPU time.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
+ * @author Robert Sedgewick
+ * @author Kevin Wayne
  */
 
 
-public class Stopwatch { 
+public class Stopwatch {
 
     private final long start;
 
@@ -32,7 +32,7 @@ public class Stopwatch {
      */
     public Stopwatch() {
         start = System.currentTimeMillis();
-    } 
+    }
 
 
     /**
@@ -45,10 +45,10 @@ public class Stopwatch {
         return (now - start) / 1000.0;
     }
 
-    
+
     /**
      * Unit tests the {@code Stopwatch} data type.
-     * Takes a command-line argument {@code n} and computes the 
+     * Takes a command-line argument {@code n} and computes the
      * sum of the square roots of the first {@code n} positive integers,
      * first using {@code Math.sqrt()}, then using {@code Math.pow()}.
      * It prints to standard output the sum and the amount of time to

@@ -9,14 +9,14 @@ import java.util.Date;
 
 
 /**
- * @Description
  * @author win10
+ * @Description
  * @Date 2018/9/28 09:19
  */
 public class DateTest {
 
     @Test
-    public void testDate(){
+    public void testDate() {
 
         Logger logger = LoggerFactory.getLogger(DateTest.class);
         /*String dateString = DateUtils.getCurrentDateStr();
@@ -39,9 +39,9 @@ public class DateTest {
         Date d05 = DateUtils.dateString2Date(ds05);
 
 
-        logger.info("COMAPRE:{}",d02.compareTo(d01));
-        logger.info("COMAPRE:{}",d02.compareTo(d02));
-        logger.info("COMAPRE:{}",d02.compareTo(d03));
+        logger.info("COMAPRE:{}", d02.compareTo(d01));
+        logger.info("COMAPRE:{}", d02.compareTo(d02));
+        logger.info("COMAPRE:{}", d02.compareTo(d03));
         /*String ignoreDateString = ",2018-10-2,"; //"2018-10-2,2018-10-3,2018-10-4";
         List<Date> ignoreOrderDate = new ArrayList<>();
         if(null!=ignoreDateString){
@@ -73,6 +73,9 @@ public class DateTest {
 
         //Date today = DateUtils.dateString2Date(DateUtils.getCurrentDateStr());
 
-
+        int size = 11;
+        int step = 10;
+        int times = (size + step - 1) / step;
+        System.out.println(times);
     }
 }

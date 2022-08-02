@@ -13,24 +13,24 @@ import java.util.List;
  */
 public class ObjectCopy {
 
-    public void test(){
+    public void test() {
         Student s = new Student();
         s.setAge(10);
         s.setName("XXXX");
         copyStudent(s);
     }
 
-    public void copyStudent(Student s){
+    public void copyStudent(Student s) {
         List<Student> stuList = new ArrayList<Student>();
 
-        for(int i=0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
             Student newStudent = new Student();
             newStudent.setName(s.getName());
             newStudent.setAge(10 + i);
             stuList.add(newStudent);
         }
-        for(Student sx:stuList){
-            System.out.println(sx.getAge()+":"+s.getName());
+        for (Student sx : stuList) {
+            System.out.println(sx.getAge() + ":" + s.getName());
         }
     }
 

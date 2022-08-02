@@ -18,7 +18,8 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://10.104.51.12:3306/lucky_stock?useUnicode=true&amp;characterEncoding=UTF8"/>
+                <property name="url"
+                          value="jdbc:mysql://10.104.51.12:3306/lucky_stock?useUnicode=true&amp;characterEncoding=UTF8"/>
                 <property name="username" value="dev_test1"/>
                 <property name="password" value="dev_test1"/>
             </dataSource>

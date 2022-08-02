@@ -19,8 +19,8 @@ public class DictionaryDao {
     //    return this.queryForList(sqlXml+"getColumns",tableName);
     //}
 
-    public List<ColumnVO> getColumns(String tableName){
-        List<ColumnVO> columnVO =  session.selectList("db.enroll.sys.DictionaryMapper.listColumns", tableName);
+    public List<ColumnVO> getColumns(String tableName) {
+        List<ColumnVO> columnVO = session.selectList("db.enroll.sys.DictionaryMapper.listColumns", tableName);
         return columnVO;
     }
 

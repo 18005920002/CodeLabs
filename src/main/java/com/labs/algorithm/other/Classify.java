@@ -37,41 +37,39 @@ public class Classify {
         System.out.println(getText(set));
     }
 
-    public static List<Goods> getGoods(){
+    public static List<Goods> getGoods() {
         List<Goods> goods = new ArrayList();
-        goods.add(new Goods("red","1000","w2","p3","abc1234"));
-        goods.add(new Goods("red","2000","w2","p3","abc1234"));
-        goods.add(new Goods("red","3000","w2","p3","abc1234"));
-        goods.add(new Goods("red","4000","w2","p3","abc1234"));
-        goods.add(new Goods("blue","1000","w2","p3","abc1234"));
-        goods.add(new Goods("blue","1000","w2","p3","abc1234"));
-        goods.add(new Goods("blue","2000","w2","p3","abc1234"));
-        goods.add(new Goods("green","1000","w2","p3","abc1234"));
-        goods.add(new Goods("green","2000","w1","p4","abc1234"));
-        goods.add(new Goods("red","2000","w2","p2","abc1234"));
-        goods.add(new Goods("red","1000","w2","p3","abc1234"));
-        goods.add(new Goods("orange","1000","w2","p3","abc1234"));
-        goods.add(new Goods("gray","1000","w2","p3","abc1234"));
-        goods.add(new Goods("gray","2000","w1","p1","abc1234"));
-        goods.add(new Goods("red","1000","w2","p3","abc1234"));
-        goods.add(new Goods("red","1000","w2","p3","abc1234"));
-        goods.add(new Goods("red","1000","w2","p3","abc1234"));
+        goods.add(new Goods("red", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("red", "2000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("red", "3000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("red", "4000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("blue", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("blue", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("blue", "2000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("green", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("green", "2000", "w1", "p4", "abc1234"));
+        goods.add(new Goods("red", "2000", "w2", "p2", "abc1234"));
+        goods.add(new Goods("red", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("orange", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("gray", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("gray", "2000", "w1", "p1", "abc1234"));
+        goods.add(new Goods("red", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("red", "1000", "w2", "p3", "abc1234"));
+        goods.add(new Goods("red", "1000", "w2", "p3", "abc1234"));
         return goods;
     }
 
 
-
-
-    private static String getText(Set<String> set){
+    private static String getText(Set<String> set) {
         String t = "";
-        int i=0;
-        for(String s:set){
-            t+=s+",";
+        int i = 0;
+        for (String s : set) {
+            t += s + ",";
             i++;
-            if(i>=3){
+            if (i >= 3) {
                 break;
             }
         }
-        return t.substring(0,t.length()-1);
+        return t.substring(0, t.length() - 1);
     }
 }

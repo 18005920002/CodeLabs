@@ -33,14 +33,22 @@
 
     </profiles>
     <dependencies>
-
+        <!-- fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.32</version>
         </dependency>
 
+        <!-- mockito -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.7.19</version>
+            <scope>test</scope>
+        </dependency>
 
+        <!--gson-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -101,7 +109,7 @@
             <version>3.6</version>
         </dependency>
 
-
+        <!-- velocity -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
@@ -114,7 +122,6 @@
             <version>1.16.10</version>
         </dependency>
 
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -126,6 +133,12 @@
             <artifactId>rocketmq-client</artifactId>
             <version>4.4.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.13</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -135,11 +148,11 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>8</source>
+                    <target>8</target>
                     <compilerArgs>
                         <arg>-Xlint:unchecked</arg>
-                        <arg>-Xlint:deprecation </arg>
+                        <arg>-Xlint:deprecation</arg>
                         <!--<arg>endorseddirs=${endorsed.dir}</arg>-->
                     </compilerArgs>
                 </configuration>

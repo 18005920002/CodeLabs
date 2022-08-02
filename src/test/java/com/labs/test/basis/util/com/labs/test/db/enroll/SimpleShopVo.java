@@ -15,7 +15,8 @@ public class SimpleShopVo {
 
     private String shopName;
     private Long id;
-    public SimpleShopVo(String shopName,Long id){
+
+    public SimpleShopVo(String shopName, Long id) {
         this.shopName = shopName;
         this.id = id;
     }

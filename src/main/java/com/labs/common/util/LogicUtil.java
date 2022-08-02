@@ -16,32 +16,33 @@ public class LogicUtil {
 
     /**
      * 不同时为真
+     *
      * @param b1
      * @param b2
      * @return
      */
-    public static final Boolean mutexTrue(Boolean b1, Boolean b2){
-        if(true==b1 && true!=b2 || true!=b1 && true){
+    public static final Boolean mutexTrue(Boolean b1, Boolean b2) {
+        if (true == b1 && true != b2 || true != b1 && true) {
             return false;
         }
         return true;
     }
 
     public static void main(String[] args) {
-        System.out.println(mutexTrue(true,true));
-        System.out.println(mutexTrue(true,false));
-        System.out.println(mutexTrue(false,true));
-        System.out.println(mutexTrue(false,false));
+        System.out.println(mutexTrue(true, true));
+        System.out.println(mutexTrue(true, false));
+        System.out.println(mutexTrue(false, true));
+        System.out.println(mutexTrue(false, false));
         getJoinString();
     }
 
-    public static void getJoinString(){
+    public static void getJoinString() {
         List<Byte> ls = new ArrayList<>();
         ls.add(new Byte("1"));
         ls.add(new Byte("2"));
         ls.add(new Byte("3"));
         ls.add(new Byte("4"));
-        System.out.println(StringUtils.join(ls,","));
+        System.out.println(StringUtils.join(ls, ","));
     }
 
 }

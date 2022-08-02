@@ -30,7 +30,7 @@ public class AsyncProducer {
             for (int i = 0; i < 100; i++) {
 
                 String msgText = "AN ASYNC MESSAGE";
-                Message msg = new Message(topic,"ASYNC_TAG02", msgText.getBytes());
+                Message msg = new Message(topic, "ASYNC_TAG02", msgText.getBytes());
                 producer.send(msg, new SendCallback() {
                     @Override
                     public void onSuccess(SendResult sendResult) {

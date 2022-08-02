@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DummyStockDAO">
+    <select id="getStock" parameterClass="dummyStockQueryVO" resultClass="dummyStock">
+        select d.id,
+        d.goods_id as goodsId,
+        d.spec_id as specId,
+        d.shop_id as shopId,
+        d.total_count as totalCount
+        from t_shop_goods_spec_stock_detail d
+        where d.shop_id=#shopId# and d.goods_id=#goodsId# and d.spec_id=#specId#
+    </select>
+    <select id="getStockForUpdate" parameterClass="dummyStockQueryVO" resultClass="dummyStock">
+        select d.id,
+        d.goods_id as goodsId,
+        d.spec_id as specId,
+        d.shop_id as shopId,
+        d.total_count as totalCount
+        from t_shop_goods_spec_stock_detail d
+        where d.shop_id=#shopId# and d.goods_id=#goodsId# and d.spec_id=#specId#
+        for update
+    </select>
+    <update id="updateStock" parameterClass="dummyStock">
+        update t_shop_goods_spec_stock_detail set total_count=total_count+#adjustCount#
+        where shop_id=#shopId# and spec_id=#specId#
+    </update>
+</sqlMap>

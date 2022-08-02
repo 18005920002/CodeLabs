@@ -17,11 +17,11 @@ public class Goods {
     private String priceLevel;
     private String sn;
 
-    public Goods(String color,String batch,String weightLevel,String priceLevel,String sn){
+    public Goods(String color, String batch, String weightLevel, String priceLevel, String sn) {
         this.color = color;
         this.batch = batch;
         this.weightLevel = weightLevel;
-        this.priceLevel =  priceLevel;
+        this.priceLevel = priceLevel;
         this.sn = sn;
     }
 
@@ -66,7 +66,7 @@ public class Goods {
     }
 
     @Override
-    public String toString(){
-        return this.getColor()+":"+this.batch+":"+this.weightLevel+":"+this.priceLevel+":"+sn;
+    public String toString() {
+        return this.getColor() + ":" + this.batch + ":" + this.weightLevel + ":" + this.priceLevel + ":" + sn;
     }
 }

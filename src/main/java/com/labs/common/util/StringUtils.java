@@ -23,13 +23,14 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 字符串处理类
- *
+ * <p>
  * <br/>Created on 2002-10-7
+ *
  * @author dengfeng
  * @since 1.0
  */
 @SuppressWarnings({"rawtypes", "unchecked", "unused", "static-access",
-"deprecation"})
+        "deprecation"})
 public class StringUtils {
     private static final int OX03 = 0x03;
     private static final int OX04 = 0x04;
@@ -84,13 +85,13 @@ public class StringUtils {
      * @param data 要加密的串
      * @return 加密后的结果
      */
-    public static synchronized String hash(String data) throws NoSuchAlgorithmException{
+    public static synchronized String hash(String data) throws NoSuchAlgorithmException {
         if (data == null) {
             return "";
         }
 
         if (digest == null) {
-        	digest = MessageDigest.getInstance("MD5");
+            digest = MessageDigest.getInstance("MD5");
         }
 
         digest.update(data.getBytes(Charset.forName("UTF-8")));
@@ -256,6 +257,7 @@ public class StringUtils {
 
     /**
      * Decodes a base64 array of bytes.
+     *
      * @param data a base64 encode byte array to decode.
      */
     public static String decodeBase64(byte[] data) {
@@ -311,17 +313,17 @@ public class StringUtils {
     }
 
     /**
-     *
      * 去除字符串中的 空字符
      * 注：  \n 回车(\u000a)
-     *      \t 水平制表符(\u0009)
-     *      \s 空格(\u0008)
-     *      \r 换行(\u000d)
-     * @param str 源字符串
+     * \t 水平制表符(\u0009)
+     * \s 空格(\u0008)
+     * \r 换行(\u000d)
+     *
+     * @param str          源字符串
      * @param includeSpace 是否处理空格
      * @return 转换后的结果
      */
-    public static String replaceBlank(String str,boolean includeSpace) {
+    public static String replaceBlank(String str, boolean includeSpace) {
         String dest = "";
         if (str != null) {
             String regexIncludeSpace = "\\s*|\t|\r|\n";
@@ -333,16 +335,13 @@ public class StringUtils {
             } else {
                 regex = regexExcludeSpace;
             }
-            Pattern p= Pattern.compile(regex);
+            Pattern p = Pattern.compile(regex);
             Matcher m = p.matcher(str);
 
             dest = m.replaceAll("");
         }
         return dest;
     }
-
-
-
 
 
     public static int wordAtNum(String str, int num) {
@@ -370,7 +369,7 @@ public class StringUtils {
      * @return 处理后的字符串
      */
     public static String nullToStr(String str) {
-        return str == null? "":str.trim();
+        return str == null ? "" : str.trim();
     }
 
     /**
@@ -467,7 +466,7 @@ public class StringUtils {
      * It no longer trims the String.
      * That functionality is available in isBlank().</p>
      *
-     * @param str  the String to check, may be null
+     * @param str the String to check, may be null
      * @return <code>true</code> if the String is empty or null
      */
     public static boolean isEmpty(String str) {
@@ -486,7 +485,7 @@ public class StringUtils {
      * StringUtils.isBlank("  bob  ") = false
      * </pre>
      *
-     * @param str  the String to check, may be null
+     * @param str the String to check, may be null
      * @return <code>true</code> if the String is null, empty or whitespace
      * @since 2.0
      */
@@ -501,7 +500,7 @@ public class StringUtils {
         }
         return true;
     }
-    
+
     public static boolean equals(String str1, String str2) {
         return str1 == null ? str2 == null : str1.equals(str2);
     }
@@ -542,7 +541,7 @@ public class StringUtils {
             strOut = new String(b, "UTF-16");
 
         } catch (UnsupportedEncodingException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
 
         return strOut;
@@ -560,7 +559,7 @@ public class StringUtils {
             strOut = new String(b, "GB2312");
 
         } catch (UnsupportedEncodingException e) {
-            LOGGER.error(e.getMessage(),e);
+            LOGGER.error(e.getMessage(), e);
         }
 
         return strOut;
@@ -575,12 +574,12 @@ public class StringUtils {
      * @return a String will all instances of oldString replaced by newString
      */
     public static String replace(String line, String oldString,
-                                       String newString) {
+                                 String newString) {
         if (line == null) {
             return null;
         }
-        int i =0;
-        i=line.indexOf(oldString, i);
+        int i = 0;
+        i = line.indexOf(oldString, i);
         if (i >= 0) {
             char[] line2 = line.toCharArray();
             char[] newString2 = newString.toCharArray();
@@ -610,14 +609,14 @@ public class StringUtils {
      * @return a String will all instances of oldString replaced by newString
      */
     public static String replaceIgnoreCase(String line, String oldString,
-                                                 String newString) {
+                                           String newString) {
         if (line == null) {
             return null;
         }
         String lcLine = line.toLowerCase();
         String lcOldString = oldString.toLowerCase();
         int i = 0;
-        i=lcLine.indexOf(lcOldString, i);
+        i = lcLine.indexOf(lcOldString, i);
         if (i >= 0) {
             char[] line2 = line.toCharArray();
             char[] newString2 = newString.toCharArray();
@@ -656,7 +655,7 @@ public class StringUtils {
         String lcLine = line.toLowerCase();
         String lcOldString = oldString.toLowerCase();
         int i = 0;
-        i=lcLine.indexOf(lcOldString, i);
+        i = lcLine.indexOf(lcOldString, i);
         if (i >= 0) {
             int counter = 0;
             char[] line2 = line.toCharArray();
@@ -693,7 +692,7 @@ public class StringUtils {
             return null;
         }
         int i = 0;
-        i=line.indexOf(oldString, i);
+        i = line.indexOf(oldString, i);
         if (i >= 0) {
             int counter = 0;
             counter++;
@@ -786,7 +785,7 @@ public class StringUtils {
      * @return the string with appropriate characters unescaped.
      */
     public static String unescapeFromXML(String stringParam) {
-        String string=stringParam;
+        String string = stringParam;
         string = replace(string, "&lt;", "<");
         string = replace(string, "&gt;", ">");
         string = replace(string, "&quot;", "\"");
@@ -849,7 +848,7 @@ public class StringUtils {
      * 对字符串进行截取 int subnum 要保留的字符数；String strCmd 要截取的字符串 返回值为截取后的字符串
      */
     public static String subStr(int subnumParam, String strCmd) {
-        int subnum=subnumParam;
+        int subnum = subnumParam;
         String tempSub = "";
         if (subnum <= 0) {
             subnum = FIVE;
@@ -873,6 +872,7 @@ public class StringUtils {
 
     /**
      * 在新闻、展品介绍等多个地方，出现了多行文本，为便于系统统一处理，现提供统一接口， 在页面显示时，进行转换。
+     *
      * @param strMultLineText GB2312/GBK编码
      * @return GB2312/GBK编码
      */
@@ -1089,7 +1089,7 @@ public class StringUtils {
     /**
      * 比较日期大小
      *
-     * @param compareDate 起始日期
+     * @param compareDate   起始日期
      * @param toCompareDate 比较日期
      * @return 比较日期是否早于起始日期
      */
@@ -1250,7 +1250,7 @@ public class StringUtils {
     /**
      * 根据年月返回当月所有日期列表
      *
-     * @param year 年
+     * @param year  年
      * @param month 月
      * @return 日期列表
      */
@@ -1275,6 +1275,7 @@ public class StringUtils {
 
     /**
      * 取得某年某月天数
+     *
      * @param date 日期字符
      * @return 某年某月天数
      */
@@ -1308,12 +1309,12 @@ public class StringUtils {
      * 返回指定日期加days天后的日期，yyyy-MM-DD
      *
      * @param dateStrParam 指定的日期
-     * @param days 增加的天数
+     * @param days         增加的天数
      * @return 计算后的结果
      */
     public static String getDateAdd(String dateStrParam, int days) {
         String date;
-        String dateStr=dateStrParam;
+        String dateStr = dateStrParam;
         if (dateStr == null) {
             return null;
         }
@@ -1331,7 +1332,7 @@ public class StringUtils {
     public static String getDateAdd(String dateStrParam, int days,
                                     String parsePattern) {
         String date;
-        String dateStr=dateStrParam;
+        String dateStr = dateStrParam;
         if (dateStr == null) {
             return null;
         }
@@ -1400,27 +1401,27 @@ public class StringUtils {
         return df.format(doubleValue);
     }
 
-  
-    /**
-	 * 转换字符串为金融数字
-	 * 
-	 * @param param 要转换的字符串
-	 * @return 转换后的结果
-	 * @since 1.0.0
-	 */
-	public static BigDecimal str2BigDecimal(String param) {
-		BigDecimal dbNumber = new BigDecimal(-1);
-		try {
-			if (!isEmpty(param)) {
-				dbNumber = new BigDecimal(param);
-			}
-		} catch (Exception ex) {
-            LOGGER.error(ex.getMessage(),ex);
-		}
 
-		return dbNumber;
-	}
-	
+    /**
+     * 转换字符串为金融数字
+     *
+     * @param param 要转换的字符串
+     * @return 转换后的结果
+     * @since 1.0.0
+     */
+    public static BigDecimal str2BigDecimal(String param) {
+        BigDecimal dbNumber = new BigDecimal(-1);
+        try {
+            if (!isEmpty(param)) {
+                dbNumber = new BigDecimal(param);
+            }
+        } catch (Exception ex) {
+            LOGGER.error(ex.getMessage(), ex);
+        }
+
+        return dbNumber;
+    }
+
     // 将字符串转换成数字
     public static int convertInt(String str) {
 
@@ -1442,25 +1443,26 @@ public class StringUtils {
         return convertArrayToStr(codes);
     }
 
-        // 将数组字符串串连用于查询使用
+    // 将数组字符串串连用于查询使用
     public static String convertArrayToStr(String[] codes) {
-        return convertArrayToStr(codes,",");
+        return convertArrayToStr(codes, ",");
     }
 
     /**
      * 将数组字符串串连
-     * @param codes 字符数组
+     *
+     * @param codes     字符数组
      * @param separator 分隔符，如果不传，默认为英文逗号
      * @return
      */
-    public static String convertArrayToStr(String[] codes,String separator) {
+    public static String convertArrayToStr(String[] codes, String separator) {
         if (codes == null || codes.length == 0) {
             return "";
         }
 
-        String separatorStr=separator;
+        String separatorStr = separator;
 
-        if(isEmpty(separatorStr)) {
+        if (isEmpty(separatorStr)) {
             separatorStr = ",";
         }
         StringBuilder str = new StringBuilder("");
@@ -1557,11 +1559,6 @@ public class StringUtils {
     }
 
 
-
-
-
-
-
     public static String dealSqlField(String str) {
         return str.trim().replace("'", "''");
     }
@@ -1591,7 +1588,7 @@ public class StringUtils {
      * @return 取得的结果
      */
     public static String getWeekOfDate(String date) {
-        String dt=date;
+        String dt = date;
         if (StringUtils.checkEmpty(dt) == null) {
             dt = StringUtils.getCurrentDate("yyyy-MM-dd");
         }
@@ -1620,7 +1617,6 @@ public class StringUtils {
         return min;
     }
 
-    
 
     /**
      * Description: 格式化时间
@@ -1634,7 +1630,7 @@ public class StringUtils {
     }
 
     public static String formatDate(Date date, String patternPram) {
-        String pattern=patternPram;
+        String pattern = patternPram;
         if (pattern == null) {
             pattern = "yyyy-MM-dd HH:mm:ss";
         }
@@ -1703,17 +1699,18 @@ public class StringUtils {
 
     /**
      * 是否是国际手机号
+     *
      * @param mobileNO 手机号码
      * @return 判断结果
      */
     public static boolean isInternationMobileNO(String mobileNO) {
 
         String mobile = commonCheckMobile(mobileNO);
-        if(mobile == null) {
+        if (mobile == null) {
             return false;
         }
         String tempMobileNo = mobile;
-        if(tempMobileNo.startsWith("0")) {
+        if (tempMobileNo.startsWith("0")) {
             while (tempMobileNo.startsWith("0")) {
                 tempMobileNo = tempMobileNo.substring(1);
             }
@@ -1726,17 +1723,18 @@ public class StringUtils {
 
     /**
      * 是否国内手机号
+     *
      * @param mobileNO 手机号码
      * @return 判断结果
      */
     public static boolean isNationalMobileNO(String mobileNO) {
         String mobile = commonCheckMobile(mobileNO);
-        if(mobile == null) {
+        if (mobile == null) {
             return false;
         }
 
         String tempMobileNo = mobile;
-        if(tempMobileNo.startsWith("0")) {
+        if (tempMobileNo.startsWith("0")) {
             while (tempMobileNo.startsWith("0")) {
                 tempMobileNo = tempMobileNo.substring(1);
             }
@@ -1752,7 +1750,7 @@ public class StringUtils {
 
     }
 
-    private static boolean matchNationalMobile(String mobile){
+    private static boolean matchNationalMobile(String mobile) {
         //移动号码
         String cm = "^((13[4-9])|(142)|(147)|(148)|(154)|(15[0-2,7-9])|(178)|(18[2-4,7-8]))\\d{8}$";
         Pattern p1 = Pattern.compile(cm);
@@ -1780,15 +1778,15 @@ public class StringUtils {
         //虚拟号码
         Pattern p4 = Pattern.compile("(170)\\d{8}");
         Matcher m4 = p4.matcher(mobile);
-        
+
         if (m4.matches()) {
             return true;
         }
-        
+
         //171号码
         Pattern p5 = Pattern.compile("(171)\\d{8}");
         Matcher m5 = p5.matcher(mobile);
-        
+
         if (m5.matches()) {
             return true;
         }
@@ -1796,15 +1794,15 @@ public class StringUtils {
     }
 
 
-    private static String commonCheckMobile(String mobileNO){
+    private static String commonCheckMobile(String mobileNO) {
         if (mobileNO == null || "".equals(mobileNO)) {
             return null;
         }
-        String mobile=mobileNO.trim();
-        if(mobile.startsWith("+")) {
+        String mobile = mobileNO.trim();
+        if (mobile.startsWith("+")) {
             mobile = mobile.substring(1);
         }
-        if(!isIntegerNum(mobile)){
+        if (!isIntegerNum(mobile)) {
             return null;
         }
         String tempMobileNo = mobile;
@@ -1817,11 +1815,12 @@ public class StringUtils {
 //        if(mobile.startsWith("0")){
 //        	mobile = mobile.substring(1);
 //        }
-        if(tempMobileNo.length() < LENGTH){
+        if (tempMobileNo.length() < LENGTH) {
             return null;
         }
         return mobile;
     }
+
     /**
      * JAVA判断字符串数组中是否包含某字符串元素
      *
@@ -1880,61 +1879,63 @@ public class StringUtils {
     }
 
     /**
-	 * 去除字符串中指定位置的字符，右侧字符串依次左移，并返回结果
+     * 去除字符串中指定位置的字符，右侧字符串依次左移，并返回结果
      * <br/> Created on 2012-11-12 下午01:10:58
-     * @author  李青原(liqingyuan1986@aliyun.com)
+     *
+     * @param str   要处理的字符串
+     * @param index 字符位置,从0开始
+     * @return 去除后的字符串结果
+     * @author 李青原(liqingyuan1986 @ aliyun.com)
      * @since 1.0
-	 * @param str 要处理的字符串
-	 * @param index 字符位置,从0开始
-	 * @return 去除后的字符串结果
      */
-	public static String removeCharAt(String str, Integer index){
-		if(index <0 || index > (str.length()-1)){
-			throw new StringIndexOutOfBoundsException(index);
-		}else{
-			return str.substring(0, index) + str.substring(index+1, str.length());
-		}
-	}
-	
-	
-	/**
-	 * 检查指定的字符串列表是否不为空。
-	 */
-	public static boolean areNotEmpty(String... values) {
-		boolean result = true;
-		if (values == null || values.length == 0) {
-			result = false;
-		} else {
-			for (String value : values) {
-				result &= !isEmpty(value);
-			}
-		}
-		return result;
-	}
-	
-	/**
-	 * 转换List所有元素转换为String, 中间以 separator分隔。
-	 * Description: 
-	 * @param list 要处理的字符串
-	 * @param separator 分隔符,如果不传，默认为英文逗号
-	 * @return 处理后的结果
-	 */
-	public static String convertToString(final List list, String separator) {
-        String separatorStr=separator;
-        if(isEmpty(separatorStr)) {
+    public static String removeCharAt(String str, Integer index) {
+        if (index < 0 || index > (str.length() - 1)) {
+            throw new StringIndexOutOfBoundsException(index);
+        } else {
+            return str.substring(0, index) + str.substring(index + 1, str.length());
+        }
+    }
+
+
+    /**
+     * 检查指定的字符串列表是否不为空。
+     */
+    public static boolean areNotEmpty(String... values) {
+        boolean result = true;
+        if (values == null || values.length == 0) {
+            result = false;
+        } else {
+            for (String value : values) {
+                result &= !isEmpty(value);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 转换List所有元素转换为String, 中间以 separator分隔。
+     * Description:
+     *
+     * @param list      要处理的字符串
+     * @param separator 分隔符,如果不传，默认为英文逗号
+     * @return 处理后的结果
+     */
+    public static String convertToString(final List list, String separator) {
+        String separatorStr = separator;
+        if (isEmpty(separatorStr)) {
             separatorStr = ",";
         }
-	    StringBuilder sb = new StringBuilder();  
-	    if (list != null && list.size() > 0) {  
-	        for (int i = 0; i < list.size(); i++) {  
-	            if (i < list.size() - 1) {  
-	                sb.append(list.get(i) + separatorStr);
-	            } else {  
-	                sb.append(list.get(i));  
-	            }  
-	        }  
-	    }  
-	    return sb.toString();  
-	}
+        StringBuilder sb = new StringBuilder();
+        if (list != null && list.size() > 0) {
+            for (int i = 0; i < list.size(); i++) {
+                if (i < list.size() - 1) {
+                    sb.append(list.get(i) + separatorStr);
+                } else {
+                    sb.append(list.get(i));
+                }
+            }
+        }
+        return sb.toString();
+    }
 
 }

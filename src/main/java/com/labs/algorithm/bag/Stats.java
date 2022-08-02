@@ -22,28 +22,28 @@ public class Stats {
         numbers.add(30.30d);
 
         int n = numbers.size();
-        logger.info("Bag Length:{}",n);
+        logger.info("Bag Length:{}", n);
         Iterator<Double> it = numbers.iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Double item = it.next();
-            logger.info("Bag item:{}",item);
+            logger.info("Bag item:{}", item);
         }
 
         double sum = 0;
-        for(double x:numbers){
+        for (double x : numbers) {
             sum += x;
         }
         //平均值
-        double mean = sum/n;
-        logger.info("Bag mean:{}",mean);
+        double mean = sum / n;
+        logger.info("Bag mean:{}", mean);
 
         sum = 0;
-        for(double x:numbers){
-            sum += (x-mean)*(x-mean);
+        for (double x : numbers) {
+            sum += (x - mean) * (x - mean);
         }
         //标准差
-        double std = Math.sqrt(sum/(n-1));
-        logger.info("Bag std:{}",std);
+        double std = Math.sqrt(sum / (n - 1));
+        logger.info("Bag std:{}", std);
 
     }
 }

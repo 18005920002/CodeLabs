@@ -10,48 +10,51 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Description
- *
- * @author ${meta.author}
- * @version v1.0 ${meta.createTime}
- */
+* Description
+*
+* @author ${meta.author}
+* @version v1.0 ${meta.createTime}
+*/
 @Repository
 public class ${meta.upperCamelEntity}DaoTpl extends LuckyBaseDao {
 
-    public ${meta.upperCamelEntity} get${meta.upperCamelEntity}ById(Long id){
-        return (${meta.upperCamelEntity}) queryForObject(sqlXml+"get${meta.upperCamelEntity}ById",id);
-    }
-
-    public List<${meta.upperCamelEntity}> list${meta.upperCamelEntity}(${meta.upperCamelEntity} shopCheckTask){
-        return queryForList(sqlXml+"list${meta.upperCamelEntity}",shopCheckTask);
-    }
-
-    public Long insert${meta.upperCamelEntity}(${meta.upperCamelEntity} shopCheckTask){
-        return (Long) insert(sqlXml+"insert${meta.upperCamelEntity}",shopCheckTask);
-    }
-
-    public int update${meta.upperCamelEntity}(${meta.upperCamelEntity} shopCheckTask){
-        return update(sqlXml+"update${meta.upperCamelEntity}",shopCheckTask);
-    }
-
-    public int update${meta.upperCamelEntity}Vo(${meta.upperCamelEntity}Vo vo){
-        return update(sqlXml+"update${meta.upperCamelEntity}Vo",vo);
-    }
-
-    /******** WEB *********/
-
-    public ${meta.upperCamelEntity}Vo get${meta.upperCamelEntity}ByParam(${meta.upperCamelEntity}Vo param){
-        return (${meta.upperCamelEntity}Vo) queryForObject(sqlXml+"get${meta.upperCamelEntity}ByParam",param);
-    }
-
-    public List<${meta.upperCamelEntity}Vo> list${meta.upperCamelEntity}Vo(${meta.upperCamelEntity}Vo vo){
-        return queryForList(sqlXml+"list${meta.upperCamelEntity}Vo",vo);
-    }
-
-    public PaginationResult<${meta.upperCamelEntity}> list${meta.upperCamelEntity}ByPage(${meta.upperCamelEntity}Param param){
-        LuckyViewPageUtil.checkPageArgs(param);
-        List<${meta.upperCamelEntity}> list =  queryForList(sqlXml + "list${meta.upperCamelEntity}ByPage",param,LuckyViewPageUtil.getStartIndex(param), LuckyViewPageUtil.getEndIndex(param));
-        Long count = (Long) queryForObject(sqlXml + "get${meta.upperCamelEntity}Count",param);
-        return new PaginationResult(count,list);
-    }
+public ${meta.upperCamelEntity} get${meta.upperCamelEntity}ById(Long id){
+return (${meta.upperCamelEntity}) queryForObject(sqlXml+"get${meta.upperCamelEntity}ById",id);
 }
+
+public List<${meta.upperCamelEntity}> list${meta.upperCamelEntity}(${meta.upperCamelEntity} shopCheckTask){
+return queryForList(sqlXml+"list${meta.upperCamelEntity}",shopCheckTask);
+}
+
+public Long insert${meta.upperCamelEntity}(${meta.upperCamelEntity} shopCheckTask){
+return (Long) insert(sqlXml+"insert${meta.upperCamelEntity}",shopCheckTask);
+}
+
+public int update${meta.upperCamelEntity}(${meta.upperCamelEntity} shopCheckTask){
+return update(sqlXml+"update${meta.upperCamelEntity}",shopCheckTask);
+}
+
+public int update${meta.upperCamelEntity}Vo(${meta.upperCamelEntity}Vo vo){
+return update(sqlXml+"update${meta.upperCamelEntity}Vo",vo);
+}
+
+/******** WEB *********/
+
+public ${meta.upperCamelEntity}Vo get${meta.upperCamelEntity}ByParam(${meta.upperCamelEntity}Vo param){
+return (${meta.upperCamelEntity}Vo) queryForObject(sqlXml+"get${meta.upperCamelEntity}ByParam",param);
+}
+
+public List
+<${meta.upperCamelEntity}Vo> list${meta.upperCamelEntity}Vo(${meta.upperCamelEntity}Vo vo){
+    return queryForList(sqlXml+"list${meta.upperCamelEntity}Vo",vo);
+    }
+
+    public PaginationResult<${meta.upperCamelEntity}> list${meta.upperCamelEntity}ByPage(${meta.upperCamelEntity}Param
+    param){
+    LuckyViewPageUtil.checkPageArgs(param);
+    List<${meta.upperCamelEntity}> list = queryForList(sqlXml + "list${meta.upperCamelEntity}
+    ByPage",param,LuckyViewPageUtil.getStartIndex(param), LuckyViewPageUtil.getEndIndex(param));
+    Long count = (Long) queryForObject(sqlXml + "get${meta.upperCamelEntity}Count",param);
+    return new PaginationResult(count,list);
+    }
+    }

@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.labs.json.dto.ConfirmReceiptDTO;
 
 /**
- *
  * Description
  * Google JSON 实例
  *
@@ -20,7 +19,7 @@ public class GsonUsage {
 
         Gson g = new Gson();
 
-        ConfirmReceiptDTO dto = g.fromJson(str,ConfirmReceiptDTO.class);
+        ConfirmReceiptDTO dto = g.fromJson(str, ConfirmReceiptDTO.class);
         System.out.println(g.toJson(dto));
     }
 }

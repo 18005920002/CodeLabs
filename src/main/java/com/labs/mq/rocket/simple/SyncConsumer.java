@@ -22,19 +22,19 @@ public class SyncConsumer {
         final String topic = "Topic-01";
 
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(groupName);
-        try{
+        try {
             consumer.setNamesrvAddr("10.112.169.34:9876");
-            consumer.subscribe(topic,"*");
+            consumer.subscribe(topic, "*");
             consumer.registerMessageListener(new MessageListenerConcurrently() {
                 @Override
                 public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                    System.out.printf("%s Receive New Message:[ %s ]\n",Thread.currentThread().getName(),msgs);
+                    System.out.printf("%s Receive New Message:[ %s ]\n", Thread.currentThread().getName(), msgs);
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
             });
             consumer.start();
             System.out.printf("Consumer Started.%n");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }

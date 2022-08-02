@@ -7,11 +7,11 @@ import java.util.NoSuchElementException;
  * Bag.java
  * Description 背包的定义
  *
+ * @param <T> 节点元素类型
  * @author win
  * @version v1.0 2018/10/9 21:09
- * @param <T> 节点元素类型
  */
-public class Bag<T> implements Iterable<T>{
+public class Bag<T> implements Iterable<T> {
 
     private Node<T> first; //背包的元素
 
@@ -19,9 +19,10 @@ public class Bag<T> implements Iterable<T>{
 
     /**
      * Link List 用来作为背包的存储结构
+     *
      * @param <T>
      */
-    private class Node<T>{
+    private class Node<T> {
         private T item;
         private Node<T> next;
     }
@@ -36,15 +37,16 @@ public class Bag<T> implements Iterable<T>{
         return new ListIterator(first);
     }
 
-    private class ListIterator<T> implements Iterator<T>{
+    private class ListIterator<T> implements Iterator<T> {
         private Node<T> current;
 
-        public ListIterator(Node<T> first){
+        public ListIterator(Node<T> first) {
             current = first;
         }
+
         @Override
         public boolean hasNext() {
-            return current!=null;
+            return current != null;
         }
 
         @Override
@@ -61,15 +63,15 @@ public class Bag<T> implements Iterable<T>{
         }
     }
 
-    public boolean isEmpty(){
-        return null==first;
+    public boolean isEmpty() {
+        return null == first;
     }
 
-    public int size(){
+    public int size() {
         return n;
     }
 
-    public void add(T item){
+    public void add(T item) {
         Node old = first;
         first = new Node<>();
         first.item = item;

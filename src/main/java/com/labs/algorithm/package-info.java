@@ -1,6 +1,6 @@
 /**
  * @Description 算法
- *  subpackage recursion
+ * subpackage recursion
  * @author win10
  * @Date 2018/9/30 15:36
  */

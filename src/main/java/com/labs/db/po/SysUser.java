@@ -3,8 +3,8 @@ package com.labs.db.po;
 import java.util.Date;
 
 /**
- * @Description
  * @author win10
+ * @Description
  * @Date 2018/9/27 11:19
  */
 public class SysUser {

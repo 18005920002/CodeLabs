@@ -1,46 +1,45 @@
 package com.labs.designpattern.strategy.compare;
 
 public class Person {
-	
-	int age;
-	String name;
-	double salary;
-	
-	public Person(String name,int age,double salary){
-		this.age = age;
-		this.name = name;
-		this.salary = salary;
-	}
 
-	public int getAge() {
-		return age;
-	}
+    int age;
+    String name;
+    double salary;
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public Person(String name, int age, double salary) {
+        this.age = age;
+        this.name = name;
+        this.salary = salary;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public double getSalary() {
-		return salary;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
-	
-	public String toString(){
-		String str = name + ":" + age + ":" + salary;
-		return str;
-	}
-	
-	
-	
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String toString() {
+        String str = name + ":" + age + ":" + salary;
+        return str;
+    }
+
+
 }

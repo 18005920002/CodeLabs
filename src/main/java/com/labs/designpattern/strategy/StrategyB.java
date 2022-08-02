@@ -1,11 +1,10 @@
 package com.labs.designpattern.strategy;
 
-public class StrategyB implements Strategy{
+public class StrategyB implements Strategy {
 
-	@Override
-	public void doSomething() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+    @Override
+    public void doSomething() {
+
+    }
+
 }

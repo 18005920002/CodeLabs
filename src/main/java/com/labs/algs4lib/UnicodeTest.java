@@ -61,46 +61,54 @@ public class UnicodeTest {
     private static final int MAX_CHAR = 65536;
 
     // do not instantiate
-    private UnicodeTest() { }
+    private UnicodeTest() {
+    }
 
     // Returns a string representation of the given codePoint, or a single
     // space if the codePoint should not be suppressed when printing.
     private static String toString(int codePoint) {
-        if (!Character.isDefined(codePoint))             return " ";
-        if (Character.isISOControl(codePoint))           return " ";
-        if (Character.isWhitespace(codePoint))           return " ";
-     // if (Character.isSurrogate(codePoint)             return " ";   // Java 1.7+ only
-        if (Character.isLowSurrogate((char) codePoint))  return " ";   // Java 1.5+
+        if (!Character.isDefined(codePoint)) return " ";
+        if (Character.isISOControl(codePoint)) return " ";
+        if (Character.isWhitespace(codePoint)) return " ";
+        // if (Character.isSurrogate(codePoint)             return " ";   // Java 1.7+ only
+        if (Character.isLowSurrogate((char) codePoint)) return " ";   // Java 1.5+
         if (Character.isHighSurrogate((char) codePoint)) return " ";   // Java 1.5+
 
-        switch(Character.getType(codePoint)) {
-            case Character.MODIFIER_SYMBOL:              return " ";
-            case Character.CONTROL:                      return " ";
-            case Character.MODIFIER_LETTER:              return " ";
-            case Character.NON_SPACING_MARK:             return " ";
-            case Character.FORMAT:                       return " ";
-            case Character.PRIVATE_USE:                  return " ";
-            default: return new String(Character.toChars(codePoint));
+        switch (Character.getType(codePoint)) {
+            case Character.MODIFIER_SYMBOL:
+                return " ";
+            case Character.CONTROL:
+                return " ";
+            case Character.MODIFIER_LETTER:
+                return " ";
+            case Character.NON_SPACING_MARK:
+                return " ";
+            case Character.FORMAT:
+                return " ";
+            case Character.PRIVATE_USE:
+                return " ";
+            default:
+                return new String(Character.toChars(codePoint));
         }
     }
 
-   /**
+    /**
      * Prints Unicode characters to standard output.
      *
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        for (int line = 0; line < 2*Character.MAX_VALUE / CHARS_PER_LINE; line++) {
+        for (int line = 0; line < 2 * Character.MAX_VALUE / CHARS_PER_LINE; line++) {
             StringBuilder buffer = new StringBuilder();
             for (int i = 0; i < CHARS_PER_LINE; i++) {
-                int codePoint = CHARS_PER_LINE*line + i;
+                int codePoint = CHARS_PER_LINE * line + i;
                 buffer.append(toString(codePoint) + "  ");
             }
             String output = buffer.toString();
             if (!output.trim().equals("")) {
                 // U+202D is the Unicode override to force left-to-right direction
                 // but doesn't seem to work with Unix more
-                StdOut.printf("U+%04X   %s\n", 16*line, output);
+                StdOut.printf("U+%04X   %s\n", 16 * line, output);
             }
         }
     }

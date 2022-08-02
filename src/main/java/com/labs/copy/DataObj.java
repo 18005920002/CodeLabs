@@ -17,9 +17,10 @@ public class DataObj {
     private String name;
     private Long goodsId;
 
-    public DataObj(){}
+    public DataObj() {
+    }
 
-    public DataObj(BigDecimal price,String name,Long goodsId){
+    public DataObj(BigDecimal price, String name, Long goodsId) {
         this.price = price;
         this.name = name;
         this.goodsId = goodsId;

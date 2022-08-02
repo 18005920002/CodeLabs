@@ -4,13 +4,17 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.labs.json.dto.ConfirmReceiptDTO;
 import com.labs.json.dto.GoodsClass;
+import com.labs.json.dto.JsonVO;
+import org.testng.collections.Maps;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
- * @Description
  * @author win10
+ * @Description
  * @Date 2018/9/11 10:40
  */
 public class JsonUseage {
@@ -34,7 +38,7 @@ public class JsonUseage {
         GoodsClass g3 = new GoodsClass(1L,2L);
         System.out.println("R::"+list.contains(g3));*/
 
-        String json="{\n" +
+        String json = "{\n" +
                 "    \"large\": [\n" +
                 "        {\n" +
                 "            \"id\": 100,\n" +
@@ -57,5 +61,23 @@ public class JsonUseage {
                 "        106010\n" +
                 "    ]\n" +
                 "}";
+
+        json = "{\"keya\":{\"bigDecimalVal\":12,\"intVal\":11,\"longVal\":13,\"stringVal\":\"14\"},\"keyb\":{\"bigDecimalVal\":22,\"intVal\":21,\"longVal\":23,\"stringVal\":\"24\"}}";
+ /*       Map<String,JsonVO> map = Maps.newHashMap();
+        JsonVO v1 = new JsonVO();
+        v1.setIntVal(11);
+        v1.setBigDecimalVal(new BigDecimal("12"));
+        v1.setLongVal(13L);
+        v1.setStringVal("14");
+        map.put("keya",v1);
+        JsonVO v2 = new JsonVO();
+        v2.setIntVal(21);
+        v2.setBigDecimalVal(new BigDecimal("22"));
+        v2.setLongVal(23L);
+        v2.setStringVal("24");
+        map.put("keyb",v2);
+        System.out.println(JSON.toJSONString(map));*/
+        Map map = JSON.parseObject(json, Map.class);
+        System.out.println(map);
     }
 }

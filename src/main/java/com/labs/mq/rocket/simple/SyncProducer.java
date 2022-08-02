@@ -20,16 +20,16 @@ public class SyncProducer {
         producer.setNamesrvAddr("10.112.169.34:9876");
         try {
             producer.start();
-            for(int i =0;i<1000;i++){
-                String content = "Hello,Message-"+i;
-                Message msg = new Message(topic,tag,content.getBytes());
+            for (int i = 0; i < 1000; i++) {
+                String content = "Hello,Message-" + i;
+                Message msg = new Message(topic, tag, content.getBytes());
                 SendResult sendResult = producer.send(msg);
                 System.out.println(sendResult);
             }
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
-        }finally {
+        } finally {
             producer.shutdown();
         }
     }
